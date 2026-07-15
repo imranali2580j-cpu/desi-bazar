@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desi Bazar</title>
+
+<link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<header>
+<h1>🛒 Desi Bazar</h1>
+<p>Fresh Grocery Delivery</p>
+</header>
+
+<h2>আমাদের পণ্য</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400" alt="আবু কাশ চাল">
+  <h3>🍚 5 কেজি আবু কাশ চাল</h3>
+<p>দাম: 21 SAR</p>
+<button onclick="addToCart('5 কেজি আবু কাশ চাল',21)">
+কার্টে যোগ করুন
+</button>
+
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="NOOR Sunflower Oil">
+<h3>🛢️ NOOR Sunflower Oil (3L)</h3>
+<p>দাম: 24 SAR</p>
+<button onclick="addToCart('NOOR Sunflower Oil (3L)',24)">
+কার্টে যোগ করুন
+</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400" alt="আলু">
+<h3>🥔 আলু</h3>
+<h3>🥔 আলু</h3>
+<p>দাম: 7 SAR</p>
+<button onclick="addToCart('আলু',7)">কার্টে যোগ করুন</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1508747703725-719777637510?w=400" alt="পিয়াজ">
+  <h3>🧅 পিয়াজ</h3>
+<p>দাম: 6 SAR</p>
+<button onclick="addToCart('পিয়াজ',6)">কার্টে যোগ করুন</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?w=400" alt="ডিম">
+<h3>🥚 ডিম (15 পিস)</h3>
+<p>দাম: 6 SAR</p>
+<button onclick="addToCart('ডিম (15 পিস)',6)">কার্টে যোগ করুন</button>
+</div>
+
+</div>
+
+<hr>
+
+<h2>🛒 আমার কার্ট</h2>
+
+<div id="cartList">
+কোনো পণ্য যোগ করা হয়নি।
+</div>
+
+<h3>মোট দাম: <span id="totalPrice">0</span> SAR</h3>
+
+<hr>
+
+<h2>📦 অর্ডার করুন</h2>
+
+<input type="text" id="customerName" placeholder="আপনার নাম">
+
+<input type="text" id="customerPhone" placeholder="মোবাইল নম্বর">
+
+<textarea id="customerAddress" placeholder="ঠিকানা"></textarea>
+<select id="customerArea">
+<option value="">এলাকা নির্বাচন করুন</option>
+<option>Dammam</option>
+<option>Al Khobar</option>
+<option>Thuqbah</option>
+</select>
+<button onclick="placeOrder()">
+অর্ডার করুন
+</button>
+
+<p><b>💵 পেমেন্ট: Cash on Delivery (COD)</b></p>
+<p>🚚 কোনো ডেলিভারি চার্জ নেই</p>
+
+<br><br>
+
+<a href="orders.html">
+    <button>📦 অর্ডার তালিকা দেখুন</button>
+</a>
+<script src="script.js"></script>
+<script>
+if("serviceWorker" in navigator){
+navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+</body>
+</html>

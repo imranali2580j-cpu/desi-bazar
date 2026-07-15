@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desi Bazar - Orders</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>📦 Desi Bazar</h1>
+<p>অর্ডার তালিকা</p>
+</header>
+
+<h2>সকল অর্ডার</h2>
+
+<div id="orderList"></div>
+
+<br>
+
+<button onclick="deleteOrders()">🗑️ সব অর্ডার মুছে ফেলুন</button>
+
+<br><br>
+
+<a href="index.html">
+<button>🏠 হোমে ফিরে যান</button>
+</a>
+
+<script>
+function showOrders(){
+
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+let html = "";
+
+if(orders.length==0){
+html = "<h3>কোনো অর্ডার নেই</h3>";
+}
+
+orders.forEach(function(order){
+
+html += `
+<div class="card">
+<h3>অর্ডার #${order.id}</h3>
+
+<p><b>নাম:</b> ${order.name}</p>
+
+<p><b>মোবাইল:</b> ${order.phone}</p>
+
+<p><b>ঠিকানা:</b> ${order.address}</p>
+<p><b>এলাকা:</b> ${order.area}</p>
+<p><b>পণ্য:</b> ${order.products.join(", ")}</p>
+
+<p><b>মোট:</b> ${order.total} SAR</p>
+
+<p><b>তারিখ:</b> ${order.date}</p>
+
+</div><br>
+`;
+
+});
+
+document.getElementById("orderList").innerHTML = html;
+
+}
+
+function deleteOrders(){
+
+if(confirm("সব অর্ডার মুছে ফেলবেন?")){
+
+localStorage.removeItem("orders");
+
+showOrders();
+
+}
+
+}
+
+showOrders();
+</script>
+
+</body>
+</html>
