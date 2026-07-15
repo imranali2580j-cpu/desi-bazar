@@ -39,7 +39,24 @@ let area = document.getElementById("customerArea").value;
 
     orders.push(order);
     localStorage.setItem("orders", JSON.stringify(orders));
+let message = 
+`🛒 Desi Bazar Order
 
+নাম: ${name}
+মোবাইল: ${phone}
+ঠিকানা: ${address}
+এলাকা: ${area}
+
+পণ্য:
+${cart.join(", ")}
+
+মোট: ${total} SAR`;
+
+let whatsapp = "966578767177";
+
+let url = "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
     alert("✅ আপনার অর্ডার সফলভাবে নেওয়া হয়েছে।");
 
     cart = [];
