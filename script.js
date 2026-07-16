@@ -52,7 +52,7 @@ ${cart.join(", ")}
 
 মোট: ${total} SAR`;
 
-let whatsapp = "966578767177";
+let whatsapp = "96657 617 7897";
 
 let url = "https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(message);
 
